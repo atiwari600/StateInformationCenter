@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.atiwari.stateinfocenter.viewModel.SharedViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/layout_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/edittext_filter"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/search_a_state"
+                android:imeOptions="flagNoExtractUi|actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="@dimen/dp_8"
+                android:textColor="@color/darker_gray"
+                android:textSize="@dimen/sp_18" />
+
+            <Button
+                android:id="@+id/btn_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple_button"
+                android:onClick="@{() -> viewModel.navigateToDetailScreen()}"
+                android:text="@string/open_in_second_screen" />
+
+        </LinearLayout>
+
+        <!-- StateListFragment -->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentPanel1"
+            android:name="com.atiwari.stateinfocenter.views.fragments.StateListFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/color_panel1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/fragmentPanel2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_filter"
+            app:layout_constraintWidth_percent="0.33" />
+
+        <!-- StateFilterListFragment -->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentPanel2"
+            android:name="com.atiwari.stateinfocenter.views.fragments.StateFilterListFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/color_panel2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/fragmentPanel3"
+            app:layout_constraintStart_toEndOf="@id/fragmentPanel1"
+            app:layout_constraintTop_toBottomOf="@id/layout_filter"
+            app:layout_constraintWidth_percent="0.34" />
+
+        <!-- StateDetailFragment -->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentPanel3"
+            android:name="com.atiwari.stateinfocenter.views.fragments.StateDetailFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/color_panel3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fragmentPanel2"
+            app:layout_constraintTop_toBottomOf="@id/layout_filter"
+            app:layout_constraintWidth_percent="0.33" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

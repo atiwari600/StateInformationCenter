@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">State Info Center</string>
+    <string name="search_a_state">Search a state</string>
+    <string name="open_in_second_screen">Open In Second Screen</string>
+    <string name="state_name">State Name:</string>
+    <string name="state_overall_population">State overall population:</string>
+    <string name="number_of_counties">Number of counties:</string>
+    <string name="state_counties_total">State = Counties Total?</string>
+    <string name="yes">YES</string>
+</resources>
