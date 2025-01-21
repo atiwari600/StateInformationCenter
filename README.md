@@ -25,7 +25,7 @@ Features
 Technical Requirements
 
 - Android Studio
-- Kotlin/Java programming language
+- Kotlin programming language
 - Android SDK
 - Navigation Components
 - Fragment-based architecture
@@ -36,12 +36,15 @@ Installation
 2. Open the project in Android Studio.
 3. Build and run the application.
 
-Contributors
-Abhishek Tiwari
-Contact
+Screenshot
 
+![image](https://github.com/user-attachments/assets/914b3d75-5572-4ada-9edb-460566823f85)
+
+![image](https://github.com/user-attachments/assets/40114a1d-1dd9-4a9d-a78e-c1d02afa1822)
+
+Contact
+Abhishek Tiwari
 For any questions or suggestions, please contact [atiwari600@gmail.com].
 
 Changelog
-
 - [Init commit message]: Initial project setup.
